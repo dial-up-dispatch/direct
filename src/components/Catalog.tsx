@@ -18,7 +18,7 @@ const REGISTRY_ITEMS: ExtensionItem[] = [
     version: 'v1.2.0',
     status: 'active',
     description: 'a local-first thought capture tool. dump tasks, raw ideas, momentary feelings, reminders, or references instantly into your browser sidebar. includes expiring pile tracking, quick category filtering, and one-click markdown exports.',
-    storeUrl: 'https://chromewebstore.google.com', // Replace with real links later if needed
+    storeUrl: 'https://chromewebstore.google.com/detail/brain-dump-inbox/fkidghfmdgegabihdgeaednfelohdkce',
     sourceUrl: 'https://github.com/dial-up-dispatch/direct/tree/main/references/brain-dump-inbox',
   },
   {
@@ -27,9 +27,10 @@ const REGISTRY_ITEMS: ExtensionItem[] = [
     version: 'v1.0.4',
     status: 'active',
     description: 'a private terminal release chamber. dump thoughts, emotional noise, or mental clutter that you do not want to keep or archive. release the text and watch it dissolve safely into nothingness.',
-    storeUrl: 'https://chromewebstore.google.com',
+    storeUrl: 'https://chromewebstore.google.com/detail/the-void/oafiikmnmkbndpjbibgfeciegldmkhdj',
     sourceUrl: 'https://github.com/dial-up-dispatch/direct/tree/main/references/the-void',
   },
+
   {
     id: 'seed-03',
     name: 'direct clipboard',
