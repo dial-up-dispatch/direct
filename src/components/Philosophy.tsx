@@ -53,6 +53,22 @@ export default function Philosophy() {
           </div>
         </div>
       </div>
+
+      {/* AI Transparency Footnote Panel */}
+      <div className="border border-[#1f1b2e] hover:border-[var(--color-border-bright)] p-5 bg-[rgba(14,11,22,0.1)] transition-all box-glow">
+        <div className="flex flex-col gap-3 max-w-3xl mx-auto text-left font-mono">
+          <h3 className="text-[10px] md:text-xs uppercase tracking-widest text-[var(--color-text-dim)] font-bold">
+            // a note on how this was built.
+          </h3>
+          <p className="text-xs text-[var(--color-text-secondary)] leading-relaxed tracking-wide">
+            Dispatch Direct extensions are developed with AI-assisted coding. I work with AI tools as a development partner: reviewing the code myself, making changes, learning from the process, and making intentional decisions throughout. It's important to me to be transparent about this because that's part of what Dial Up Dispatch, and by extension, Dispatch Direct stands for.
+          </p>
+          <p className="text-xs text-[var(--color-text-primary)] font-bold uppercase tracking-wider mt-1">
+            You, and your tools, deserve honesty. Full Stop.
+          </p>
+        </div>
+      </div>
     </section>
+
   );
 }
