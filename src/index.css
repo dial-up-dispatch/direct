@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@import "tailwindcss";
+
+
+/* === Retro Signal Themes (CSS Variables) === */
+:root {
+  /* Default Theme: The Deep (Purple Nebula) */
+  --color-bg: #0a080f;
+  --color-surface: #0e0b16;
+  --color-surface-raised: #141021;
+  --color-border: #1f1b2e;
+  --color-border-bright: #312b48;
+  --color-text-primary: #e8d4f0;
+  --color-text-secondary: #a888c0;
+  --color-text-dim: #4a3560;
+  --color-accent: #9b7fcb;
+  --color-accent-dim: #7a5faf;
+  --color-accent-glow: rgba(155, 127, 203, 0.2);
+  --glow-accent: 0 0 10px rgba(155, 127, 203, 0.35);
+  --scanline-tint: rgba(155, 127, 203, 0.03);
+  --font-mono: "Space Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+body[data-theme="deep"] {
+  --color-bg: #0a080f;
+  --color-surface: #0e0b16;
+  --color-surface-raised: #141021;
+  --color-border: #1f1b2e;
+  --color-border-bright: #312b48;
+  --color-text-primary: #e8d4f0;
+  --color-text-secondary: #a888c0;
+  --color-text-dim: #4a3560;
+  --color-accent: #9b7fcb;
+  --color-accent-dim: #7a5faf;
+  --color-accent-glow: rgba(155, 127, 203, 0.2);
+  --glow-accent: 0 0 10px rgba(155, 127, 203, 0.35);
+  --scanline-tint: rgba(155, 127, 203, 0.03);
+}
+
+body[data-theme="moss"] {
+  --color-bg: #0a0f0f;
+  --color-surface: #0f1616;
+  --color-surface-raised: #162121;
+  --color-border: #1a3a3a;
+  --color-border-bright: #3a8a7a;
+  --color-text-primary: #e0f0f0;
+  --color-text-secondary: #a0ccc0;
+  --color-text-dim: #3a8a7a;
+  --color-accent: #5fffd7;
+  --color-accent-dim: #3dd4b0;
+  --color-accent-glow: rgba(95, 255, 215, 0.2);
+  --glow-accent: 0 0 10px rgba(95, 255, 215, 0.35);
+  --scanline-tint: rgba(95, 255, 215, 0.03);
+}
+
+body[data-theme="amber"] {
+  --color-bg: #0f0d08;
+  --color-surface: #14110b;
+  --color-surface-raised: #1c180f;
+  --color-border: #332b14;
+  --color-border-bright: #7d7050;
+  --color-text-primary: #f0e4c0;
+  --color-text-secondary: #d4c8a0;
+  --color-text-dim: #7d7050;
+  --color-accent: #ffb300;
+  --color-accent-dim: #d48a00;
+  --color-accent-glow: rgba(255, 179, 0, 0.2);
+  --glow-accent: 0 0 10px rgba(255, 179, 0, 0.35);
+  --scanline-tint: rgba(255, 179, 0, 0.03);
+}
+
+body[data-theme="periwinkle"] {
+  --color-bg: #0b0c12;
+  --color-surface: #10111a;
+  --color-surface-raised: #161824;
+  --color-border: #252d45;
+  --color-border-bright: #606880;
+  --color-text-primary: #d8e0f8;
+  --color-text-secondary: #b8c0d8;
+  --color-text-dim: #606880;
+  --color-accent: #8090d8;
+  --color-accent-dim: #6070c8;
+  --color-accent-glow: rgba(128, 144, 216, 0.2);
+  --glow-accent: 0 0 10px rgba(128, 144, 216, 0.35);
+  --scanline-tint: rgba(128, 144, 216, 0.03);
+}
+
+body[data-theme="algae-copper"] {
+  --color-bg: #090e0c;
+  --color-surface: #0d1411;
+  --color-surface-raised: #131c18;
+  --color-border: #1e3020;
+  --color-border-bright: #587050;
+  --color-text-primary: #d0ecca;
+  --color-text-secondary: #b0cca8;
+  --color-text-dim: #587050;
+  --color-accent: #90c888;
+  --color-accent-dim: #7ab870;
+  --color-accent-glow: rgba(144, 200, 136, 0.2);
+  --glow-accent: 0 0 10px rgba(144, 200, 136, 0.35);
+  --scanline-tint: rgba(144, 200, 136, 0.03);
+}
+
+body[data-theme="crimson-nebula"] {
+  --color-bg: #07050a;
+  --color-surface: #0c0811;
+  --color-surface-raised: #130d1c;
+  --color-border: #2a2448;
+  --color-border-bright: #3d3058;
+  --color-text-primary: #d4c8e0;
+  --color-text-secondary: #9888a8;
+  --color-text-dim: #3d3058;
+  --color-accent: #9e2d3f;
+  --color-accent-dim: #7d2030;
+  --color-accent-glow: rgba(158, 45, 63, 0.2);
+  --glow-accent: 0 0 10px rgba(158, 45, 63, 0.35);
+  --scanline-tint: rgba(158, 45, 63, 0.03);
+}
+
+/* === Custom resets & globals === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  font-family: var(--font-mono);
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  position: relative;
+}
+
+/* --- Retro Scrollbars --- */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.15);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border: 1px solid var(--color-border-bright);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+  box-shadow: var(--glow-accent);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+}
+
+#root {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto !important;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+  box-sizing: border-box;
+}
+
+
+
+/* === CRT Screen Effects Utility === */
+.screen-effects {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      var(--scanline-tint) 2px,
+      var(--scanline-tint) 4px
+    ),
+    radial-gradient(
+      circle at center,
+      transparent 50%,
+      rgba(0, 0, 0, 0.4) 100%
+    );
+  animation: scanline-breathe 18s ease-in-out infinite;
+}
+
+.screen-effects::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.025;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+.screen-effects::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.45);
+  pointer-events: none;
+  animation: panel-flicker 12s ease-in-out infinite;
+}
+
+/* === Custom Utilities === */
+.phosphor-glow {
+  text-shadow: var(--glow-accent);
+}
+
+.box-glow {
+  box-shadow: var(--glow-accent);
+}
+
+/* === Animations === */
+@keyframes panel-flicker {
+  0%, 100% { opacity: 1; }
+  45% { opacity: 0.98; }
+  47% { opacity: 0.95; }
+  49% { opacity: 0.99; }
+  51% { opacity: 0.97; }
+  53% { opacity: 1; }
+}
+
+@keyframes scanline-breathe {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+}
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes dissolve-up {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0px);
+  }
+  60% {
+    opacity: 0.6;
+    transform: translateY(-8px);
+    filter: blur(1px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-16px);
+    filter: blur(4px);
+  }
+}
+
+@keyframes text-dissolve {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+    filter: blur(3px);
+  }
+}
+
+@keyframes scanline-sweep {
+  0% { transform: translateY(100%); opacity: 0.6; }
+  100% { transform: translateY(-100%); opacity: 0; }
+}
+
+@keyframes wipe-up {
+  from { transform: translateY(100%); }
+  to { transform: translateY(-100%); }
+}
+
+@keyframes wipe-down {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(100%); }
+}
+
+/* === Dynamic Interactive Classes === */
+.animate-text-dissolve {
+  animation: text-dissolve 350ms ease-out forwards;
+}
+
+.animate-scanline-sweep {
+  animation: scanline-sweep 220ms ease-in forwards;
+}
+
+.animate-dissolve-up {
+  animation: dissolve-up 450ms ease-out forwards;
+}
+
+/* Blinking terminal cursor */
+.blinking-cursor {
+  display: inline-block;
+  width: 10px;
+  height: 1.1em;
+  background-color: var(--color-accent);
+  box-shadow: var(--glow-accent);
+  animation: cursor-blink 0.9s step-end infinite;
+  vertical-align: middle;
+}
