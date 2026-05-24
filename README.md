@@ -1,73 +1,63 @@
-# React + TypeScript + Vite
+# Dispatch Direct // Registry Portal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> the browser sidebar arm of **dial up dispatch**, an indie developer research initiative.
 
-Currently, two official plugins are available:
+This repository hosts the static landing site and registry deck for **Dispatch Direct**—a suite of browser sidebar tools focused on complete offline data sovereignty. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Live at: **https://dial-up-dispatch.github.io/direct/**
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📺 The Local Vow
 
-## Expanding the ESLint configuration
+Every tool documented and simulated here is built on a single, non-negotiable vow:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+> **"Your data is always yours, always local, and always retrievable—even if this project disappeared tomorrow."**
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+*   **Zero Transit:** No databases, no sync servers, no telemetry, and no accounts. Everything runs locally in your browser sandbox on your CPU.
+*   **Plain Portability:** Quick, readable backups (Markdown/plain text) so your data is never held hostage by proprietary file formats.
+*   **Permanent Offline Execution:** Fully operational without network signals.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🛰️ Registry Satellites
+
+1.  **Brain Dump Inbox (`v1.2.0`):** A local-first thought capture tool. Expiring pile logs, fast category filtering, and one-click markdown exports.
+2.  **The Void (`v1.0.4`):** A private terminal release chamber. Type transient thoughts or mental clutter and release them to dissolve safely into absolute nothingness.
+3.  **Future Seeds:** Idea-stage companion tools awaiting portal socket activation.
+
+---
+
+## 🛠️ Technology Stack
+
+*   **Core:** React + TypeScript + Vite.
+*   **Styling:** Tailwind CSS v4 (native compiler plugins) + Custom HSL Phosphor-Glow variables.
+*   **Animations:** Framer Motion (for boot diagnostics, horizontal wipe sweeps, and staggered card entrances).
+*   **Audio Synthesis:** Zero-dependency Web Audio API utilities (`src/utils/audio.ts`) synthesizing tactile typewriter key click sounds and sweep sweeps on user interaction.
+
+---
+
+## ⚡ Development & Deployment
+
+### Local Setup
+Ensure you have Node.js v20+ installed.
+
+```bash
+# Navigate to workspace
+cd direct
+
+# Install dependencies
+npm install
+
+# Run local development server
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Static Production Build
+```bash
+# Compile and optimize static assets to direct/dist/
+npm run build
 ```
+
+### Automated Actions Deployment
+A GitHub Actions workflow (**[.github/workflows/deploy.yml](.github/workflows/deploy.yml)**) is integrated. Every push to the `main` branch automatically installs packages, runs the compiler, and deploys the optimized outputs (`direct/dist`) to your target `gh-pages` branch.
